@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg-color: #66d37e;
+  --second-bg-color: #fcfcfc;
+  --text-color: #5f6d7e;
+}
+
+.header .navbar {
+  background-color: var(--bg-color);
+}
+
+.navbar .navbar-brand {
+  color: #fff;
+}
+
+.navbar .nav-link {
+  color: #fff;
+}
+
+main {
+  margin: 83px 32px;
+  display: flex;
+  flex-direction: row;
+  gap: 26px;
+}
+
+.sidebar {
+  display: block;
+  width: 331px;
+  height: 400px;
+  padding: 24px;
+  background-color: var(--second-bg-color);
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar .sidebar-title {
+  color: var(--bg-color);
+  font-size: 27px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.sidebar .sidebar-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  color: var(--bg-color);
+  padding: 6px;
+}
+
+.sidebar .sidebar-item:hover {
+  background-color: var(--bg-color);
+  color: #fff;
+}
+
+.sidebar-item i {
+  font-size: 34px;
+}
+
+.sidebar-item a {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: var(--bg-color);
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.sidebar-item a:hover {
+  color: #fff;
+}
+
+.content {
+  width: 100%;
+}
+
+.content .content-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-top .title {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--bg-color);
+}
+
+.title i {
+  font-size: 32px;
+}
+
+.content-data {
+  background-color: var(--second-bg-color);
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.08);
+  margin-top: 37px;
+  padding: 24px 0;
+}
+
+.content-data .search {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 32px;
+}
+
+.content-data .table th {
+  background-color: #66d37e;
+  color: #fff;
+}
+
+@media (max-width: 680px) {
+  main {
+    margin: 32px 16px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .content .content-top {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 16px;
+  }
+
+  .content-data .search {
+    margin: 0 12px;
+  }
+}
