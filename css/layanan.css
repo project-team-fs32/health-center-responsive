@@ -38,6 +38,11 @@
   display: flex;
 }
 
+.navbar .brand {
+  display: flex;
+  align-items: center;
+}
+
 .navbar .navbar-brand {
   color: #fff;
 }
@@ -224,7 +229,22 @@ main {
   }
 }
 
+@media (max-width: 550px) {
+  .content-data .qty-data {
+    flex-direction: column;
+    margin-top: 16px;
+  }
+
+  .content-data .qty-data span {
+    display: none;
+  }
+}
+
 @media (max-width: 450px) {
+  .navbar .brand {
+    flex-direction: column;
+  }
+
   .navbar .navbar-brand {
     font-size: 16px;
     margin: 0;
