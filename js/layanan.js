@@ -21,5 +21,54 @@ const fetchLayanan = async () => {
     console.log(err);
   }
 };
-
 fetchLayanan();
+
+let simpan = document.getElementById("simpan");
+
+simpan.addEventListener("click", () => {
+  let warning = document.getElementById("warning");
+  let layanan = document.getElementById("layanan").value;
+  let biaya = document.getElementById("biaya").value;
+  let dokter = document.getElementById("dokter").value;
+  let jadwal = document.getElementById("jadwal").value;
+  let foto = document.getElementById("foto").value;
+
+  if (
+    layanan === "" ||
+    biaya === "" ||
+    dokter === "" ||
+    jadwal === "" ||
+    foto === ""
+  ) {
+    warning.innerHTML = `<div class="alert alert-danger" role="alert">
+  Data masih kosong !
+</div>`;
+    return;
+  }
+
+  const addlayanan = async () => {
+    let data = {
+      nama_layanan: layanan,
+      biaya: biaya,
+      nama_dokter: dokter,
+      jadwal: jadwal,
+      image: foto,
+    };
+
+    try {
+      const res = await fetch(ENDPOINT_LAYANAN, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) window.location.href = "layanan.html";
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  addlayanan();
+});

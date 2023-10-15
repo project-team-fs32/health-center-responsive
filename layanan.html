@@ -25,31 +25,33 @@
   <body>
     <!-- header -->
     <header class="header">
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg d-flex align-items-center">
         <div class="container">
-          <a class="navbar-brand fw-medium" href="#">
-            <img
-              src="https://i.ibb.co/f0ZY4XR/Vector.png"
-              alt="Logo"
-              width="25"
-              height="25"
-              class="d-inline-block align-text-top me-1"
-            />
-            Health Center
-          </a>
-          <button
-            class="navbar-toggler border-light"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <div>
+            <button
+              class="navbar-toggler border-light me-1"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand fw-medium" href="#">
+              <img
+                src="https://i.ibb.co/f0ZY4XR/Vector.png"
+                alt="Logo"
+                width="25"
+                height="25"
+                class="d-inline-block align-text-top me-1"
+              />
+              Health Center
+            </a>
+          </div>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto gap-3">
+            <ul class="navbar-nav ms-auto gap-3 me-3">
               <li class="nav-item">
                 <a class="nav-link" href="#">Beranda</a>
               </li>
@@ -61,6 +63,52 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Berita</a>
+              </li>
+            </ul>
+          </div>
+          <div class="user dropdown">
+            <i class="bx bx-user-circle fs-4"></i>
+            <span
+              class="dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              >Fajar Riski</span
+            >
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" style="color: #66d37e" href="#"
+                  >Dashboard</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  style="color: #66d37e"
+                  href="layanan.html"
+                  >Layanan</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" style="color: #66d37e" href="#">
+                  Data &raquo;
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-submenu dropdown-submenu-left"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#">Data Pasien</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Data Dokter</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Data Poliklinik</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Data Rekam Medis</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
@@ -76,9 +124,9 @@
           <i class="bx bx-signal-4"></i>
           <a href=""> Dashboard</a>
         </div>
-        <div class="sidebar-item">
+        <div class="sidebar-item active">
           <i class="bx bx-time"></i>
-          <a href=""> Layanan</a>
+          <a href="layanan.html" style="color: #fff"> Layanan</a>
         </div>
         <div class="sidebar-item">
           <i class="bx bxs-data"></i>
@@ -89,7 +137,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Dashboard</a
+            Data</a
           >
           <ul class="dropdown-menu">
             <li>
@@ -108,7 +156,13 @@
             <h3 class="m-0">Layanan</h3>
           </div>
           <div class="btn-action">
-            <button class="btn btn-sm btn-success">Tambah Data</button>
+            <button class="btn btn-sm btn-success">
+              <a
+                href="tambahLayanan.html"
+                class="text-light text-decoration-none"
+                >Tambah Data</a
+              >
+            </button>
             <button class="btn btn-sm btn-primary">Cetak Data</button>
           </div>
         </div>
