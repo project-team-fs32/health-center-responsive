@@ -1,6 +1,5 @@
 
-const API_KEY = "d908a40fe4c64c3a984bb37e678043fd";
-const HEALTH_NEWS = "https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey="
+const HEALTH_NEWS = "https://saurav.tech/NewsAPI/top-headlines/category/health/us.json"
 
 
 window.onload = function() {
@@ -9,7 +8,7 @@ window.onload = function() {
 };
 
 const fetchNews = async () => {
-    const response = await fetch(HEALTH_NEWS+API_KEY);
+    const response = await fetch(HEALTH_NEWS);
     newsDataArr = [];
     if(response.status >=200 && response.status < 300) {
         const myJson = await response.json();
