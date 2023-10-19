@@ -36,6 +36,9 @@
   background-color: var(--bg-color);
   align-items: center;
   display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .navbar .brand {
@@ -59,7 +62,7 @@
 }
 
 main {
-  margin: 83px 32px;
+  margin: 100px 32px;
   display: flex;
   flex-direction: row;
   gap: 26px;
