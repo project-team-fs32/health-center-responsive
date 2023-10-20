@@ -177,7 +177,7 @@
         }
         if (valid) {
           const MOCKAPI_USER_ENDPOINT =
-            "https://653162634d4c2e3f333ced30.mockapi.io/api/user";
+            "https://652a44c14791d884f1fcb6a7.mockapi.io/user";
 
           const userData = {
             firstname: first,
@@ -187,7 +187,13 @@
             password: password,
           };
 
-          fetch(MOCKAPI_USER_ENDPOINT, { method: "POST", body: userData })
+          fetch(MOCKAPI_USER_ENDPOINT, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userData),
+          })
             .then((res) => res.json())
             .then((data) => {
               alert("Register success");
