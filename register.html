@@ -1,156 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/login-register.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/login-register.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Sign Up</title>
-</head>
-<body class="custom-d-green p-16">
+  </head>
+  <body class="custom-d-green p-16">
     <main class="">
-        <div class="container flex justify-center">
-            <div class="left w-2/5 hidden lg:block">
-                <img class="w-full" src="assets/register.png" alt="">
-            </div>
-            <div class="right text-center w-3/5 bg-white px-8 pt-12">
-                <h1 class="font-medium custom-hijau text-3xl">Sign Up for Account</h1>
-                <p class="custom-hijau my-8">Let’s get you all set up so you can start creating your
-                    <br>
-                    first onboarding experience.
-                </p>
-                <form id="registerForm">
-                    <div >
-                        <div class="block lg:flex w-full text-left custom-hijau font-medium gap-5">
-                            <div class="w-full">
-                                <div class="mb-3">
-                                    <label for="first">First Name</label>
-                                </div>
-                                <input type="text"
-                                    class="border-2 rounded-md border-gray-300 focus:border-gray-500 outline-none w-full h-12 px-3"
-                                    id="first">
-                                <p class="text-red-500" id="firstError"></p>
-                            </div>
-                            <div class="w-full">
-                                <div class="mb-3">
-                                    <label for="last">Last Name</label>
-                                </div>
-                                
-                                <input type="text"
-                                    class="border-2 rounded-md border-gray-300 focus:border-gray-500 outline-none w-full h-12 px-3"
-                                    id="last">
-                                <p class="text-red-500" id="lastError"></p>
-                            </div>
-                        </div>
-                        <div class="w-full text-left custom-hijau font-medium">
-                            <div class="mb-3 mt-5"><label for="birth">Birth of Year</label></div>
-                            <input type="date"
-                                class="border-2 rounded-md border-gray-300 focus:border-gray-500 outline-none w-full h-12 px-3" id="birth">
-                            <p class="text-red-500" id="birthError"></p>
-                        </div>
-                        <div class="w-full text-left custom-hijau font-medium">
-                            <div class="mb-3 mt-5"><label for="email">Email</label></div>
-                            <input type="email"
-                                class="border-2 rounded-md border-gray-300 focus:border-gray-500 outline-none w-full h-12 px-3" id="email">
-                            <p class="text-red-500" id="emailError"></p>
-                        </div>
-                        <div class="w-full text-left custom-hijau font-medium">
-                            <div class="mb-3 mt-5"><label for="password">Password</label></div>
-                            <input type="password"
-                                class="border-2 rounded-md border-gray-300 focus:border-gray-500 outline-none w-full h-12 px-3" id="password">
-                            <p class="text-red-500" id="passwordError"></p>
-                        </div>
-                        
-                    </div>
-                    <div class="flex justify-between items-center mt-5">
-                        <div class="flex items-center">
-                        <input id="link-checkbox" type="checkbox" class="accent-green-500">
-                        <label for="link-checkbox"
-                            class="ml-2 text-sm font-medium text-gray-400">I accept all <span class="text-green-400">Term & Conditions</span></label>
-                        </div>
-                        <p class="text-red-500" id="termError"></p>
-                    </div>
-                    <div class="flex flex-col md:flex-row gap-7 mt-4 px-12 justify-center">
-                        
-                        <a href="login.html" class="rounded-md border border-green-300 hover:border-green-600 outline-none text-green-400 px-16 py-2">Sign In</a>
-                        <button class="rounded-md bg-green-600 text-white px-16 py-2 hover:bg-green-400">Sign Up</button>
-                    </div>
-                </form>
-            
-            </div>
+      <div class="container flex justify-center">
+        <div class="left w-2/5 hidden lg:block">
+          <img class="w-full" src="assets/register.png" alt="" />
         </div>
+        <div class="right text-center w-3/5 bg-white px-8 pt-12">
+          <h1 class="font-medium custom-hijau text-3xl">Sign Up for Account</h1>
+          <p class="custom-hijau my-8">
+            Let’s get you all set up so you can start creating your
+            <br />
+            first onboarding experience.
+          </p>
+          <form id="registerForm">
+            <div>
+              <div
+                class="block lg:flex w-full text-left custom-hijau font-medium gap-5"
+              >
+                <div class="w-full">
+                  <div class="mb-3">
+                    <label for="first">First Name</label>
+                  </div>
+                  <input
+                    type="text"
+                    class="border-2 rounded-md border-gray-300 focus:border-gray-500 outline-none w-full h-12 px-3"
+                    id="first"
+                  />
+                  <p class="text-red-500" id="firstError"></p>
+                </div>
+                <div class="w-full">
+                  <div class="mb-3">
+                    <label for="last">Last Name</label>
+                  </div>
+
+                  <input
+                    type="text"
+                    class="border-2 rounded-md border-gray-300 focus:border-gray-500 outline-none w-full h-12 px-3"
+                    id="last"
+                  />
+                  <p class="text-red-500" id="lastError"></p>
+                </div>
+              </div>
+              <div class="w-full text-left custom-hijau font-medium">
+                <div class="mb-3 mt-5">
+                  <label for="birth">Birth of Year</label>
+                </div>
+                <input
+                  type="date"
+                  class="border-2 rounded-md border-gray-300 focus:border-gray-500 outline-none w-full h-12 px-3"
+                  id="birth"
+                />
+                <p class="text-red-500" id="birthError"></p>
+              </div>
+              <div class="w-full text-left custom-hijau font-medium">
+                <div class="mb-3 mt-5"><label for="email">Email</label></div>
+                <input
+                  type="email"
+                  class="border-2 rounded-md border-gray-300 focus:border-gray-500 outline-none w-full h-12 px-3"
+                  id="email"
+                />
+                <p class="text-red-500" id="emailError"></p>
+              </div>
+              <div class="w-full text-left custom-hijau font-medium">
+                <div class="mb-3 mt-5">
+                  <label for="password">Password</label>
+                </div>
+                <input
+                  type="password"
+                  class="border-2 rounded-md border-gray-300 focus:border-gray-500 outline-none w-full h-12 px-3"
+                  id="password"
+                />
+                <p class="text-red-500" id="passwordError"></p>
+              </div>
+            </div>
+            <div class="flex justify-between items-center mt-5">
+              <div class="flex items-center">
+                <input
+                  id="link-checkbox"
+                  type="checkbox"
+                  class="accent-green-500"
+                />
+                <label
+                  for="link-checkbox"
+                  class="ml-2 text-sm font-medium text-gray-400"
+                  >I accept all
+                  <span class="text-green-400">Term & Conditions</span></label
+                >
+              </div>
+              <p class="text-red-500" id="termError"></p>
+            </div>
+            <div
+              class="flex flex-col md:flex-row gap-7 mt-4 px-12 justify-center"
+            >
+              <a
+                href="login.html"
+                class="rounded-md border border-green-300 hover:border-green-600 outline-none text-green-400 px-16 py-2"
+                >Sign In</a
+              >
+              <button
+                class="rounded-md bg-green-600 text-white px-16 py-2 hover:bg-green-400"
+              >
+                Sign Up
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script>
-        $('#registerForm').submit(function(e){
-            e.preventDefault();
-            let first = $('#first').val();
-            let last = $('#last').val();
-            let birth = $('#birth').val();
-            let email = $('#email').val();
-            let password = $('#password').val();
-            let term = $('#link-checkbox').is(':checked');
-            let valid = true;
-            if(first == ''){
-                $("#first").add("border-red-500");
-                $("#firstError").html('Nama depan tidak boleh kosong');
-                valid = false;
-            }
-            if(last == ''){
-                $("#last").add("border-red-500");
-                $("#lastError").html('Nama belakang tidak boleh kosong');
-                valid = false;
-            }
-            if(birth == ''){
-                $("#birth").add("border-red-500");
-                $("#birthError").html('Tanggal lahir tidak boleh kosong');
-                valid = false;
-            }
-            if(email == ''){
-                $("#email").add("border-red-500");
-                $("#emailError").html('Email tidak boleh kosong');
-                valid = false;
-            }
-            //validasi email valid menggunakan regex
-            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if(!emailRegex.test(email)){
-                $("#email").add("border-red-500");
-                $("#emailError").html('Email tidak valid');
-                valid = false;
-            }
-            if(password == ''){
-                $("#password").add("border-red-500");
-                $("#passwordError").html('Password tidak boleh kosong');
-                valid = false;
-            }
-            if(!term){
-                $("#link-checkbox").add("border-red-500");
-                $("#termError").html('Anda harus menyetujui term & condition');
-                valid = false;
-            }
-            if(valid){
-                $.ajax({
-                    url: 'https://653162634d4c2e3f333ced30.mockapi.io/api/register',
-                    method: 'POST',
-                    data: {
-                        firstname: first,
-                        lastname: last,
-                        birth: birth,
-                        email: email,
-                        password: password
-                    },
-                    success: function(data){
-                        alert('Register success');
-                        window.location.href = 'login.html?id=' + data.id;
-                    },
-                    error: function(err){
-                        alert(err);
-                    }
-                })
-            }
-        })
+      $("#registerForm").submit(function (e) {
+        e.preventDefault();
+        let first = $("#first").val();
+        let last = $("#last").val();
+        let birth = $("#birth").val();
+        let email = $("#email").val();
+        let password = $("#password").val();
+        let term = $("#link-checkbox").is(":checked");
+        let valid = true;
+        if (first == "") {
+          $("#first").add("border-red-500");
+          $("#firstError").html("Nama depan tidak boleh kosong");
+          valid = false;
+        }
+        if (last == "") {
+          $("#last").add("border-red-500");
+          $("#lastError").html("Nama belakang tidak boleh kosong");
+          valid = false;
+        }
+        if (birth == "") {
+          $("#birth").add("border-red-500");
+          $("#birthError").html("Tanggal lahir tidak boleh kosong");
+          valid = false;
+        }
+        if (email == "") {
+          $("#email").add("border-red-500");
+          $("#emailError").html("Email tidak boleh kosong");
+          valid = false;
+        }
+        //validasi email valid menggunakan regex
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          $("#email").add("border-red-500");
+          $("#emailError").html("Email tidak valid");
+          valid = false;
+        }
+        if (password == "") {
+          $("#password").add("border-red-500");
+          $("#passwordError").html("Password tidak boleh kosong");
+          valid = false;
+        }
+        if (!term) {
+          $("#link-checkbox").add("border-red-500");
+          $("#termError").html("Anda harus menyetujui term & condition");
+          valid = false;
+        }
+        if (valid) {
+          const MOCKAPI_USER_ENDPOINT =
+            "https://653162634d4c2e3f333ced30.mockapi.io/api/user";
+
+          const userData = {
+            firstname: first,
+            lastname: last,
+            birth: birth,
+            email: email,
+            password: password,
+          };
+
+          fetch(MOCKAPI_USER_ENDPOINT, { method: "POST", body: userData })
+            .then((res) => res.json())
+            .then((data) => {
+              alert("Register success");
+              window.location.href = "/login.html";
+            });
+
+          //   $.ajax({
+          //     url: "https://653162634d4c2e3f333ced30.mockapi.io/api/register",
+          //     method: "POST",
+          //     data: {
+          //       firstname: first,
+          //       lastname: last,
+          //       birth: birth,
+          //       email: email,
+          //       password: password,
+          //     },
+          //     success: function (data) {
+          //       alert("Register success");
+          //       window.location.href = "login.html?id=" + data.id;
+          //     },
+          //     error: function (err) {
+          //       alert(err);
+          //     },
+          //   });
+        }
+      });
     </script>
-</body>
+  </body>
 </html>

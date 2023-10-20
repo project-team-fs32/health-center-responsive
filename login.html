@@ -143,32 +143,58 @@
           valid = false;
         }
         if (valid) {
-          let url = new URL(window.location.href);
-          let id = url.searchParams.get("id");
-          $.ajax({
-            url:
-              "https://653162634d4c2e3f333ced30.mockapi.io/api/register/" + id,
-            method: "GET",
-            success: function (data) {
-              if (data.email == email && data.password == password) {
-                $.ajax({
-                  url: "https://653162634d4c2e3f333ced30.mockapi.io/api/login",
-                  method: "POST",
-                  data: {
-                    email: email,
-                    password: password,
-                  },
-                  success: function (data) {
-                    localStorage.setItem("user", JSON.stringify(data));
-                    alert("Login berhasil");
-                    window.location.href = "index.html";
-                  },
-                });
-              } else {
-                alert("Email atau password salah");
+          const MOCKAPI_USER_ENDPOINT =
+            "https://653162634d4c2e3f333ced30.mockapi.io/api/user";
+
+          let successLogin = false;
+
+          fetch(MOCKAPI_USER_ENDPOINT)
+            .then((res) => res.json())
+            .then((userList) => {
+              for (let i = 0; i < userList.length; i++) {
+                const user = userList[i];
+
+                if (user.email === email && user.password === password) {
+                  successLogin = true;
+                  return;
+                }
               }
-            },
-          });
+
+              if (successLogin) {
+                localStorage.setItem("user", JSON.stringify(data));
+                alert("Login berhasil");
+                window.location.href = "index.html";
+              } else {
+                alert("Login gagal, coba ulang kembali");
+              }
+            });
+
+          // let url = new URL(window.location.href);
+          // let id = url.searchParams.get("id");
+          // $.ajax({
+          //   url:
+          //     "https://653162634d4c2e3f333ced30.mockapi.io/api/register/" + id,
+          //   method: "GET",
+          //   success: function (data) {
+          //     if (data.email == email && data.password == password) {
+          //       $.ajax({
+          //         url: "https://653162634d4c2e3f333ced30.mockapi.io/api/login",
+          //         method: "POST",
+          //         data: {
+          //           email: email,
+          //           password: password,
+          //         },
+          //         success: function (data) {
+          //           localStorage.setItem("user", JSON.stringify(data));
+          //           alert("Login berhasil");
+          //           window.location.href = "index.html";
+          //         },
+          //       });
+          //     } else {
+          //       alert("Email atau password salah");
+          //     }
+          //   },
+          // });
         }
       });
     </script>
