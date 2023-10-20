@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/login-register.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Sign Up</title>
+  </head>
+  <body class="custom-d-green p-16 p-md-0">
+    <main class="">
+      <div class="container flex justify-center">
+        <div class="left w-2/5 hidden lg:block">
+          <img class="w-full" src="assets/login.png" alt="" />
+        </div>
+        <div class="right text-center w-3/5 bg-white px-8 pt-12">
+          <h1 class="font-medium custom-hijau text-3xl">Sign In for Account</h1>
+          <p class="custom-hijau mt-2">
+            Sign in to your account so you can continue building <br />
+            onboarding experience.
+          </p>
+          <form id="loginForm">
+            <div class="gap-x-24 mt-12">
+              <div class="w-full text-left custom-hijau font-medium">
+                <div class="mb-3"><label for="">Email</label></div>
+
+                <input
+                  type="email"
+                  id="email"
+                  class="border-2 rounded-md border-gray-300 focus:border-gray-500 outline-none w-full h-12 px-3"
+                />
+                <p class="text-red-500" id="emailError"></p>
+              </div>
+              <div class="w-full text-left custom-hijau font-medium">
+                <div class="mb-3 mt-5"><label for>Password</label></div>
+                <input
+                  type="password"
+                  id="password"
+                  class="border-2 rounded-md border-gray-300 focus:border-gray-500 outline-none w-full h-12 px-3"
+                />
+                <p class="text-red-500" id="passwordError"></p>
+              </div>
+            </div>
+            <div class="flex justify-between items-center mt-5">
+              <div class="flex items-center">
+                <input
+                  id="link-checkbox"
+                  type="checkbox"
+                  class="accent-green-500"
+                />
+                <label
+                  for="link-checkbox"
+                  class="ml-2 text-sm font-medium custom-hijau"
+                  >Remember me</label
+                >
+              </div>
+              <div>
+                <label for=" " class="ml-2 text-sm font-medium custom-hijau"
+                  >Forgot Password</label
+                >
+              </div>
+            </div>
+            <div class="flex gap-4 mt-4 justify-around px-12">
+              <button
+                class="rounded-md bg-green-600 text-white px-16 py-2 hover:bg-green-400 lg-125"
+              >
+                Sign In
+              </button>
+              <a
+                href="register.html"
+                class="rounded-md border border-green-300 hover:border-green-600 outline-none text-green-400 px-16 py-2 lg-125"
+                >Sign Up</a
+              >
+            </div>
+          </form>
+          <div class="mt-10 justify-around px-12">
+            <p class="text-gray-400 mt-5">Or sign in using</p>
+
+            <div class="flex mt-4 justify-center gap-5">
+              <div class="border-2 p-1 rounded-lg border-gray-300 outline-none">
+                <img
+                  src="https://tailus.io/sources/blocks/social/preview/images/google.svg"
+                  class="left-0 w-7"
+                  alt="google logo"
+                />
+              </div>
+              <div
+                class="facebook border-2 p-1 rounded-lg border-gray-300 outline-none"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg"
+                  class="left-0 w-7"
+                  alt="Facebook logo"
+                />
+              </div>
+              <div
+                class="twitter border-2 p-1 rounded-lg border-gray-300 outline-none w-10"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Twitter_new.svg/640px-Twitter_new.svg.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("#loginForm").submit(function (e) {
+        e.preventDefault();
+        let email = $("input#email").val();
+        let password = $("input#password").val();
+        let valid = true;
+        if (email == "") {
+          $("#email").add("border-red-500");
+          $("#emailError").html("Email tidak boleh kosong");
+          valid = false;
+        }
+
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          $("#email").add("border-red-500");
+          $("#emailError").html("Email tidak valid");
+          valid = false;
+        }
+        if (password == "") {
+          $("#password").add("border-red-500");
+          $("#passwordError").html("Password tidak boleh kosong");
+          valid = false;
+        }
+        if (valid) {
+          let url = new URL(window.location.href);
+          let id = url.searchParams.get("id");
+          $.ajax({
+            url:
+              "https://653162634d4c2e3f333ced30.mockapi.io/api/register/" + id,
+            method: "GET",
+            success: function (data) {
+              if (data.email == email && data.password == password) {
+                $.ajax({
+                  url: "https://653162634d4c2e3f333ced30.mockapi.io/api/login",
+                  method: "POST",
+                  data: {
+                    email: email,
+                    password: password,
+                  },
+                  success: function (data) {
+                    localStorage.setItem("user", JSON.stringify(data));
+                    alert("Login berhasil");
+                    window.location.href = "index.html";
+                  },
+                });
+              } else {
+                alert("Email atau password salah");
+              }
+            },
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
