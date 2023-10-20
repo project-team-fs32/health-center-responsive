@@ -14,28 +14,6 @@
   --text-color: #5f6d7e;
 }
 
-.dropdown-menu li {
-  position: relative;
-}
-
-.dropdown-menu li a {
-  color: var(--bg-color);
-}
-
-.dropdown-menu .dropdown-submenu {
-  display: none;
-  position: absolute;
-  left: 100%;
-  top: -7px;
-}
-.dropdown-menu .dropdown-submenu-left {
-  right: 100%;
-  left: auto;
-}
-.dropdown-menu > li:hover > .dropdown-submenu {
-  display: block;
-}
-
 .header .navbar {
   background-color: var(--bg-color);
   align-items: center;
@@ -63,6 +41,54 @@
   align-items: center;
   gap: 4px;
   color: #66d37e;
+}
+
+.navbar .user {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #66d37e;
+}
+
+.navbar .autentikasi .login a {
+  border-radius: 100px;
+  border-color: var(--second-bg-color);
+}
+
+.navbar .autentikasi .login a:hover {
+  background-color: var(--second-bg-color);
+}
+
+.navbar .autentikasi .daftar a {
+  border-radius: 100px;
+  background-color: var(--second-bg-color);
+  border: none;
+}
+
+.navbar .autentikasi .daftar a:hover {
+  opacity: 0.8;
+}
+
+.dropdown-menu li {
+  position: relative;
+}
+
+.dropdown-menu li a {
+  color: var(--bg-color);
+}
+
+.dropdown-menu .dropdown-submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: -7px;
+}
+.dropdown-menu .dropdown-submenu-left {
+  right: 100%;
+  left: auto;
+}
+.dropdown-menu > li:hover > .dropdown-submenu {
+  display: block;
 }
 
 .hero {

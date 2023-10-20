@@ -64,7 +64,10 @@ simpan.addEventListener("click", () => {
         body: JSON.stringify(data),
       });
 
-      if (res.ok) window.location.href = "layanan.html";
+      if (res.ok) {
+        alert("Data berhasil ditambahkan");
+        window.location.href = "layanan.html";
+      }
     } catch (err) {
       console.log(err);
     }
